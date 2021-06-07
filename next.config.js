@@ -1,0 +1,5 @@
+module.exports = {
+    env: {
+        NEXT_PUBLIC_MAP_TOKEN: process.env.NEXT_PUBLIC_MAP_TOKEN,
+    },
+  }

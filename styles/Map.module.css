@@ -1,0 +1,8 @@
+.mapMarker {
+    background-color: red;
+}
+
+.mapPopup {
+    display: flex;
+    background-color: #4444;
+}

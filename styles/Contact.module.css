@@ -1,0 +1,84 @@
+.menuButton {
+    width: 70px;
+    height: 70px;
+    background-color: whitesmoke;
+    border-radius: 50%;
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    border: 5px solid black;
+    font-weight: bolder;
+    z-index: 405;
+}
+
+.menuButton:hover {
+    background-color: black;
+    color: whitesmoke;
+    border-color: whitesmoke;
+}
+
+
+
+.eventContainerActive {
+    overflow-y: scroll;
+    width: 35vw;
+    height: 50vh;
+    background-color: whitesmoke;
+    opacity: .95;
+    display: block;
+    position: absolute;
+    right: 13%;
+    top: 12.5%;
+    transition: 1000ms;
+    border-radius: 10px;
+    border: 2px solid royalblue;
+    z-index: 405;
+}
+
+.eventContainer {
+    width: 250px;
+    height: 25vh;
+    background-color: whitesmoke;
+    display: hidden;
+    position: fixed;
+    top: -200%;
+    right: 170%;
+    transition: 850ms;
+    z-index: 406;
+}
+
+.eventContainer * > {
+    font-display: hidden;
+}
+
+.dotActive {
+    transition: 750ms;
+    width: 25px;
+    height: 25px;
+    background-color: whitesmoke;
+    border: 3px solid black;
+    border-radius: 50%;
+    position: fixed;
+    top: 17.5%;
+    right: 10%;
+    display: flex;
+    z-index: 406;
+}
+
+.dot {
+    transition: 750ms;
+    width: 0vw;
+    height: 0vh;
+    background-color: whitesmoke;
+    border: 3px solid black;
+    border-radius: 50%;
+    position: fixed;
+    top: -50%;
+    right: 10%;
+    display: flex;
+}
+
+
+
+
+    

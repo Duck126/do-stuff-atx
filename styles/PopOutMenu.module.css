@@ -1,0 +1,131 @@
+.popmenuContainer {
+    height: 10%;
+    align-self: flex-start;
+    flex-direction: column;
+    display: flex;
+}
+
+.popmenuContainer > * {
+    flex-basis: 100%;
+}
+.popList {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+
+}
+
+.menuList {
+    background-color: royalblue;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    flex-basis: 100%;
+    position: relative;
+    display: flex;
+    list-style: none;
+    justify-self: center;
+    border: 2px solid whitesmoke;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.menuList > * {
+    justify-self: center;
+    flex-basis: 100%;
+    margin: 5%;
+    text-align: center;
+}
+
+.activeMenuItem {
+    background-color: royalblue;
+    color: whitesmoke;
+    font-weight: bolder;
+    width: auto;
+    height: auto;
+    padding: 2%; 
+    border-radius: 5px;   
+}
+
+.menuItem {
+    background-color: royalblue;
+    color: whitesmoke;
+}
+
+
+.popList > * {
+    flex-basis: 100%;
+    text-align: flex-start;
+    align-self: flex-start;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid royalblue;
+    border-radius: 5px;
+    transition: 1200ms;
+}
+
+.ListContainer {
+    width: 100%;
+    display: flex;
+    transition: 1200ms;
+}
+
+.popListItem {
+    display: flex;
+    width: stretch;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: royalblue;
+    color: whitesmoke;
+}
+
+.popListItem > * {
+    flex-direction: column;
+}
+
+.itemName {
+    display: flex;
+    margin: 5px;
+    flex-basis: 50%;
+    font-weight: bolder;
+}
+
+.itemLocation {
+    font-size: .75rem;
+    font-style: italic;
+    font-weight: lighter;
+    flex-basis: 25%;
+}
+
+.itemImage {
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    justify-self: flex-start;
+    padding: 10px;
+}
+
+.itemDescriptionHidden {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    max-width: 65ch;
+    text-align: flex-start;
+    height: 0px;
+}
+
+.itemDescriptionShow {
+    transition: 1000ms;
+    height: fit-content;
+    text-align: flex-start;
+    max-width: 75ch;
+}
+
+.descButton {
+    height: fit-content;
+    margin-left: 20px;
+    align-self: flex-end;
+    justify-self: flex-end;
+}
