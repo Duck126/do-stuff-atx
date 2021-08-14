@@ -1,25 +1,26 @@
-import { useContext } from "react";
+import React, { useContext, useEffect, useMemo } from "react";
 import { Marker, Popup } from 'react-leaflet';
 import { InfoContext } from '../components/InfoProvider';
 
-const MapMarker = () => {
+const MapMarker = React.memo(() => {
     const {data} = useContext(InfoContext);
-    console.log(data);
+    
     return (
         <>
             {
-                data.map((item, index) => {
+                data.locData.map((item, index) => {
                     return (
                         <Marker
                             position={item.latlong}
-                            draggable={true}
+                            draggable={false}
                             animate={true}
                             key={index}
                             className="Mapmarker"
                         >
+                            {index}
                             <Popup className="Mappopup">
-                                {item.name}
-                                {item.location}
+                                <p>{item.name}</p> 
+                                <p>Address: {item.location}</p>
                             </Popup>
                         </Marker>
                     );
@@ -27,6 +28,6 @@ const MapMarker = () => {
             }
         </>
     )
-}
+}, []);
 
 export default MapMarker;

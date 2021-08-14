@@ -1,5 +1,5 @@
 import styles from '../styles/PopOutMenu.module.css';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import SwimData from './data/SwimData';
 import HikeData from './data/HikeData';
 import FoodData from './data/FoodData';
@@ -15,26 +15,63 @@ const PopoutMenu = () => {
 
     const { data, setData } = useContext(InfoContext);
 
-    const [dropDown, setDropdown] = useState(false);
+    const itemData = [
+        {
+            id: 1,
+            data: SwimData,
+            name: 'Swimming',
+            active: true
+        },
+        {
+            id: 2,
+            data: HikeData,
+            name: 'Hiking',
+            active: false
+        },
+        {
+            id: 3,
+            data: FoodData,
+            name: 'Food',
+            active: false
+        },
+        {
+            id: 4,
+            data: DrinkData,
+            name: 'Drinks',
+            active: false
+        },
+        {
+            id: 5,
+            data: CoffeeData,
+            name: 'Coffee',
+            active: false
+        },
+    ];
 
+    const handleClick = (item, index) => {
+        setData(item.data);
+    }
+
+    const handleSelction = (e, index) => {
+        const newData = {locData: data.locData, activeItem: index};
+        setData(newData);
+    }
 
     return (
         <>
             <div className={styles.popmenuContainer}>
                 <ul className={styles.menuList} >
-                    <a onClick={() => setData(SwimData)}><li className={styles.menuItem}>Swimming</li></a>
-                    <a onClick={() => setData(HikeData)}><li className={styles.menuItem}>Hiking</li></a>
-                    <a onClick={() => setData(FoodData)}><li className={styles.menuItem}>Food</li></a>
-                    <a onClick={() => setData(DrinkData)}><li className={styles.menuItem}>Drinks</li></a>
-                    <a onClick={() => setData(CoffeeData)}><li className={styles.menuItem}>Coffee</li></a>
+                    {itemData.map((item, index) => (
+                        <a id={item.id} key={index} onClick={() => handleClick(item)}><li className={styles.menuItem}>{item.name}</li></a>
+                    ))}
                 </ul>
             </div>
 
-            <div className={styles.listContainer}>
+            <div className={styles.placeContainer}>
                 <ul className={styles.popList}>
-                    {data.map((item, index) => {
+                    {data.locData.map((item, index) => {
                         return (
-                            <li key={index} className={styles.popListItem}>
+                            <li key={index} className={styles.popListItem} onClick={(e) => handleSelction(e, index)}>
                                 <div>
                                     <Image height='50px' width='50px' className={styles.itemImage} src={item.image}></Image>
                                 </div>
@@ -50,7 +87,5 @@ const PopoutMenu = () => {
         </>
     )
 }
-
-
 
 export default PopoutMenu;

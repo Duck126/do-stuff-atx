@@ -6,7 +6,6 @@ import styles from '../styles/Layout.module.css'
 
 const Layout = ({ children }) => {
     
-    //getStaticProps();
 
     return (
         <div className={styles.container}>
@@ -30,24 +29,6 @@ const Layout = ({ children }) => {
     );
 }
 
-// export async function getStaticProps(context) {
-//     const res = await fetch(`https://www.eventbrite.com/oauth/authorize?response_type=code&client_id=S2RWMEKZLXUJSMZOTB&redirect_uri=http://localhost:3000/oauth/redirect?`)
-//     const data = await res.json()
-//     console.log(res);
-//     if (!data) {
-//         console.log(data.json);
-//         // return {
-//         //     redirect: {
-//         //         destination: EventRedirect,
-//         //         permanent: false,
-//         //     },
-//         // }
-//     }
-
-//     return {
-//         props: { data }, // will be passed to the page component as props
-//     }
-// }
 
 
 

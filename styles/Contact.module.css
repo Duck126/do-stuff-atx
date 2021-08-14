@@ -33,18 +33,40 @@
     border-radius: 10px;
     border: 2px solid royalblue;
     z-index: 405;
+    transition: 1000ms;
 }
+
+/* width */
+.eventContainerActive::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  .eventContainerActive::-webkit-scrollbar-track {
+    background: whitesmoke;
+  }
+  
+  /* Handle */
+  .eventContainerActive::-webkit-scrollbar-thumb {
+    background: royalblue;
+  }
+  
+  /* Handle on hover */
+  .eventContainerActive::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 
 .eventContainer {
     width: 250px;
     height: 25vh;
     background-color: whitesmoke;
-    display: hidden;
     position: fixed;
     top: -200%;
-    right: 170%;
-    transition: 850ms;
-    z-index: 406;
+    right: 13%;
+    transition: 1250ms;
+    z-index: 400;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .eventContainer * > {
