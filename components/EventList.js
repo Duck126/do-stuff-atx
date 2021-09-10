@@ -1,6 +1,6 @@
 import styles from '../styles/Contact.module.css'
 import PopoutMenu from '../components/PopoutMenuBar'
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 
 const EventList = () => {
 
@@ -11,9 +11,8 @@ const EventList = () => {
     return (
         <>
             <div>
-                <button className={styles.menuButton} onClick={showMenu}>Do Stuff</button>
+                <button className={eventMenu ? styles.menuButtonActive : styles.menuButton} onClick={showMenu}>{eventMenu ? 'Hide Menu' : 'Things to do'}</button>
             </div>
-            <div className={eventMenu ? styles.dotActive : styles.dot}></div>
             <div className={eventMenu ? styles.eventContainerActive : styles.eventContainer}>
                 <PopoutMenu />
             </div>

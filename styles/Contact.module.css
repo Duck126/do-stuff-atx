@@ -1,106 +1,131 @@
+.menuButtonActive {
+  width: 70px;
+  height: 70px;
+  border-radius: 5px;
+  background-color: whitesmoke;
+  position: absolute;
+  top: 5%;
+  right: 35vw;
+  border: 5px solid black;
+  font-weight: bolder;
+  z-index: 405;
+  transition: 1000ms;
+}
+
 .menuButton {
-    width: 70px;
-    height: 70px;
-    background-color: whitesmoke;
-    border-radius: 50%;
-    position: absolute;
-    top: 10%;
-    right: 5%;
-    border: 5px solid black;
-    font-weight: bolder;
-    z-index: 405;
+  width: 70px;
+  height: 70px;
+  border-radius: 5px;
+  background-color: whitesmoke;
+  position: absolute;
+  top: 5%;
+  right: 0%;
+  border: 5px solid black;
+  font-weight: bolder;
+  z-index: 405;
+  transition: 800ms;
 }
 
 .menuButton:hover {
-    background-color: black;
-    color: whitesmoke;
-    border-color: whitesmoke;
+  background-color: black;
+  color: whitesmoke;
+  border-color: whitesmoke;
 }
 
-
-
 .eventContainerActive {
-    overflow-y: scroll;
-    width: 35vw;
-    height: 50vh;
-    background-color: whitesmoke;
-    opacity: .95;
-    display: block;
-    position: absolute;
-    right: 13%;
-    top: 12.5%;
-    transition: 1000ms;
-    border-radius: 10px;
-    border: 2px solid royalblue;
-    z-index: 405;
-    transition: 1000ms;
+  overflow-y: scroll;
+  width: 35vw;
+  height: 88vh;
+  background-color: #4444;
+  display: block;
+  position: absolute;
+  right: 0%;
+  top: 5%;
+  transition: 800ms;
+  border-radius: 10px;
+  border: 2px solid black;
+  z-index: 405;
+  padding: 1em;
 }
 
 /* width */
 .eventContainerActive::-webkit-scrollbar {
-    width: 5px;
-  }
-  
-  /* Track */
-  .eventContainerActive::-webkit-scrollbar-track {
-    background: whitesmoke;
-  }
-  
-  /* Handle */
-  .eventContainerActive::-webkit-scrollbar-thumb {
-    background: royalblue;
-  }
-  
-  /* Handle on hover */
-  .eventContainerActive::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
+  width: 5px;
+}
+
+/* Track */
+.eventContainerActive::-webkit-scrollbar-track {
+  background: whitesmoke;
+}
+
+/* Handle */
+.eventContainerActive::-webkit-scrollbar-thumb {
+  background: black;
+}
+
+/* Handle on hover */
+.eventContainerActive::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 
 .eventContainer {
-    width: 250px;
-    height: 25vh;
-    background-color: whitesmoke;
-    position: fixed;
-    top: -200%;
-    right: 13%;
-    transition: 1250ms;
-    z-index: 400;
-    overflow-x: hidden;
-    overflow-y: hidden;
+  width: 250px;
+  height: 25vh;
+  background-color: whitesmoke;
+  position: fixed;
+  top: 0%;
+  right: -100%;
+  transition: 1000ms;
+  z-index: 400;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .eventContainer * > {
-    font-display: hidden;
+  font-display: hidden;
 }
 
-.dotActive {
-    transition: 750ms;
-    width: 25px;
-    height: 25px;
+@media screen and (max-width: 640px) {
+  .menuButtonActive {
+    width: 70px;
+    height: 70px;
+    top: 52.5%;
+    right: 0;
+    transition: 1000ms;
+  }
+
+  .menuButton {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: 86%;
+    right: 0%;
+    transition: 800ms;
+  }
+
+  .eventContainerActive {
+    overflow-y: scroll;
+    width: 100vw;
+    height: 35vh;
+    background-color: #4444;
+    display: block;
+    position: absolute;
+    top: 60%;
+    right: 0;
+    z-index: 400;
+    transition: 800ms;
+  }
+
+  .eventContainer {
+    width: 100vw;
+    height: 25vh;
     background-color: whitesmoke;
-    border: 3px solid black;
-    border-radius: 50%;
-    position: fixed;
-    top: 17.5%;
-    right: 10%;
-    display: flex;
-    z-index: 406;
+    position: absolute;
+    top: 200%;
+    right: 0;
+    transition: 1000ms;
+    z-index: 400;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
 }
-
-.dot {
-    transition: 750ms;
-    width: 0vw;
-    height: 0vh;
-    background-color: whitesmoke;
-    border: 3px solid black;
-    border-radius: 50%;
-    position: fixed;
-    top: -50%;
-    right: 10%;
-    display: flex;
-}
-
-
-
-
-    

@@ -18,7 +18,7 @@ const Map = React.memo(() => {
         center={[30.2672,-97.7431]}
         zoom={12}
         scrollWheelZoom={true}
-        style={{ height: "100%", width: "100%", display: "flex" }}
+        style={{ height: "100%", width: "100vw", display: "flex" }}
       >
         <ChangeView center={data.locData[data.activeItem].latlong}/>
         <TileLayer

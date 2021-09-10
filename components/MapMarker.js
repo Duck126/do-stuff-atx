@@ -1,10 +1,16 @@
-import React, { useContext, useEffect, useMemo } from "react";
-import { Marker, Popup } from 'react-leaflet';
+import React, { useContext, useEffect, useRef } from "react";
+import { Marker, Popup} from 'react-leaflet';
 import { InfoContext } from '../components/InfoProvider';
 
 const MapMarker = React.memo(() => {
-    const {data} = useContext(InfoContext);
-    
+    const { data } = useContext(InfoContext);
+    const markerRef = useRef(new Array());
+    const currentMarker = data.activeItem;
+
+    useEffect(() => {
+        markerRef.current[currentMarker].openPopup();
+    },[]);
+
     return (
         <>
             {
@@ -16,10 +22,11 @@ const MapMarker = React.memo(() => {
                             animate={true}
                             key={index}
                             className="Mapmarker"
+                            //Make a Ref for each item in the array***
+                            ref={(Element) => markerRef.current.push(Element)}
                         >
-                            {index}
                             <Popup className="Mappopup">
-                                <p>{item.name}</p> 
+                                <p>{item.name}</p>
                                 <p>Address: {item.location}</p>
                             </Popup>
                         </Marker>
